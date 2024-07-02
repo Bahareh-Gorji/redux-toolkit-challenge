@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+  background-color: hsla(180, 52%, 96%);
+}
+
+button {
+  font-family: "Spartan", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+/* header */
+
+.header {
+  height: 155px;
+  width: 100%;
+  background-color: hsl(180, 29%, 50%);
+  background-image: url("./images/bg-header-mobile.svg");
+}
+
+/* responsive => media queries */
+
+@media only screen and (min-width: 600px) {
+  .header {
+    background-image: url("./images/bg-header-desktop.svg");
+  }
+}

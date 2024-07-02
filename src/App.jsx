@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useSelector } from "react-redux";
+import JobCards from "./components/JobCard";
+import Filters from "./components/Filters";
+import jobs from "./data/data.json";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const filters = useSelector((state) => state.filters);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      {/* header */}
+      <div className="header"></div>
+
+      {/* filters array length > 0 => show Filters component */}
+      {filters.length > 0 && <Filters filters={filters} />}
+
+      {/* filters array length = 0 => show all jobs (JobCard) */}
+      {/* filters array length > 0 => show filtered jobs (JobCard) */}
+      <div className="container">
+        {jobs.map((jobs) => {
+          const jobTags = [
+            jobs.role,
+            jobs.level,
+            ...(jobs.languages || []),
+            ...(jobs.tools || []),
+          ];
+
+          const filteredJobs = filters.every((tag) => jobTags.includes(tag));
+
+          return filters.length === 0 ? (
+            <JobCards
+              key={jobs.id}
+              logo={jobs.logo}
+              company={jobs.company}
+              position={jobs.position}
+              postedAt={jobs.postedAt}
+              contract={jobs.contract}
+              location={jobs.location}
+              isFeatured={jobs.featured}
+              isNew={jobs.new}
+              jobTags={jobTags}
+            />
+          ) : (
+            filteredJobs && (
+              <JobCards
+                key={jobs.id}
+                logo={jobs.logo}
+                company={jobs.company}
+                position={jobs.position}
+                postedAt={jobs.postedAt}
+                contract={jobs.contract}
+                location={jobs.location}
+                isFeatured={jobs.featured}
+                isNew={jobs.new}
+                jobTags={jobTags}
+              />
+            )
+          );
+        })}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

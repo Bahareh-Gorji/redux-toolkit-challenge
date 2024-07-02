@@ -32,7 +32,7 @@
 }
 
 .company {
-  color: var(--primary-dark-cyan);
+  color: hsl(180, 29%, 50%);
   font-size: 0.9em;
   display: inline;
   margin-right: 18px;
@@ -50,28 +50,28 @@
 }
 
 .new-tag {
-  background-color: var(--primary-dark-cyan);
+  background-color: hsl(180, 29%, 50%);
 }
 
 .feature-tag {
-  background-color: var(--vdark-gray-cyan);
+  background-color: hsl(180, 14%, 20%);
 }
 
 .position {
   cursor: pointer;
   padding-top: 15px;
   font-size: 1.2em;
-  color: var(--vdark-gray-cyan);
+  color: hsl(180, 14%, 20%);
 }
 
 .position:hover {
-  color: var(--primary-dark-cyan);
+  color: hsl(180, 29%, 50%);
 }
 
 .description {
   padding-top: 15px;
   font-size: 0.8em;
-  color: var(--dark-gray-cyan);
+  color: hsl(180, 8%, 52%);
 }
 
 .description span {
@@ -84,7 +84,7 @@
   flex-wrap: wrap;
   margin: 0px 25px;
   padding: 15px 0 10px;
-  border-top: 1px solid var(--dark-gray-cyan);
+  border-top: 1px solid hsl(180, 8%, 52%);
 }
 
 .job-tag {
@@ -93,15 +93,15 @@
   border-radius: 5px;
   padding: 8px 8px 6px;
   margin: 0 15px 15px 0px;
-  color: var(--primary-dark-cyan);
-  background-color: var(--filter-tablets);
+  color: hsl(180, 29%, 50%);
+  background-color: hsl(180, 31%, 95%);
   font-size: 0.85em;
   font-weight: 700;
 }
 
 .job-tag:hover {
-  color: var(--filter-tablets);
-  background-color: var(--primary-dark-cyan);
+  color: hsl(180, 31%, 95%);
+  background-color: hsl(180, 29%, 50%);
 }
 
 .job-tag:focus {
@@ -159,7 +159,7 @@
   .description {
     padding-top: 15px;
     font-size: 1em;
-    color: var(--dark-gray-cyan);
+    color: hsl(180, 8%, 52%);
   }
 
   .description span {

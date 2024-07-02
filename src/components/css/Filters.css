@@ -28,8 +28,8 @@
   border-radius: 5px;
   padding: 0 0 0 10px;
   margin: 15px 15px 0px 0px;
-  color: var(--primary-dark-cyan);
-  background-color: var(--filter-tablets);
+  color: hsl(180, 29%, 50%);
+  background-color: hsl(180, 31%, 95%);
   font-size: 0.9em;
   font-weight: 700;
 }
@@ -44,11 +44,11 @@
   height: 32px;
   margin-left: 10px;
   border-radius: 0px 5px 5px 0px;
-  background-color: var(--primary-dark-cyan);
+  background-color: hsl(180, 29%, 50%);
 }
 
 .remove-btn:hover {
-  background-color: var(--vdark-gray-cyan);
+  background-color: hsl(180, 14%, 20%);
 }
 
 .remove-btn:focus {
@@ -61,11 +61,11 @@
   border: none;
   background-color: transparent;
   margin-right: 25px;
-  color: var(--dark-gray-cyan);
+  color: hsl(180, 8%, 52%);
 }
 
 .clear-btn:hover {
-  color: var(--primary-dark-cyan);
+  color: hsl(180, 29%, 50%);
   text-decoration: underline;
 }
 
